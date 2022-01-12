@@ -65,3 +65,4 @@ def test_remocao_de_pedidos(inicial, final):
     restaurante.remove_pedido()
     assert restaurante.pedidos_na_fila == final
 
+print("new test")
