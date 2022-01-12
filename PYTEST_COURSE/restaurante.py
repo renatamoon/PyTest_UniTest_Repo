@@ -19,3 +19,4 @@ class Restaurante:
     def remove_pedido(self):
         if self.pedidos_na_fila > 0:
             self.pedidos_na_fila -= 1
+
