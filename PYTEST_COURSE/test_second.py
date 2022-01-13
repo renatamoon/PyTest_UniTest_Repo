@@ -10,4 +10,3 @@ def test_checkout():
 def test_logout():
     print("Logout from application")
 
-
