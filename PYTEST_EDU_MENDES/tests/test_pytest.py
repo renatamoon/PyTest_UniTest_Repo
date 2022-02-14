@@ -48,3 +48,13 @@ def test_when_play_return_1_then_none():
 )
 def test_play_must_return_sweet_cheese_with_5_multiples():
     assert play(10) == 'SWEET CHEESE'
+
+
+@mark.xfail
+def test_xfail2():
+    assert play(20) == 'SWEET CHEESE'
+
+
+@mark.xfail
+def test_xfail1():
+    assert play(20) != 'SWEET CHEESE'
