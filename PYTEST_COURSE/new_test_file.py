@@ -53,5 +53,41 @@ def test_return_ok():
     x = "OK"
     assert x == "OK"
 
-def test_error(error_fixture):
-    pass
+# --------- Asserting with the assert statement
+def function_to_test(x):
+    result = x * 3
+    return result
+
+def test_function_to_test():
+    assert function_to_test(4) == 12
+    assert function_to_test(5) == 15
+    assert function_to_test != 0
+
+
+# -------- Assertions about expecting EXCEPTIONS
+@pytest.mark.xfail
+def test_zero_division():
+    with pytest.raises(ZeroDivisionError):
+        1 / 0 # this test doesn't pass
+
+"""
+# -------- Matching exception error
+def function_to_raise_error():
+    raise ValueError("Exception 456 raised")
+
+
+def test_match_the_exception():
+    with pytest.raises(ValueError, match=r".* 456 .*"):
+        function_to_raise_error() """
+
+
+# --------- Making use of context-sensitive comparisons
+def test_set_comparison():
+    res1 = set("1414")
+    res2 = set("2020")
+    assert res1 != res2
+
+def test_set_comparison():
+    res1 = set("1010")
+    res2 = set("1010")
+    assert res1 == res2
