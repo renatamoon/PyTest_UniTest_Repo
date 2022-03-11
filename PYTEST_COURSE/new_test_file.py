@@ -91,3 +91,6 @@ def test_set_comparison():
     res1 = set("1010")
     res2 = set("1010")
     assert res1 == res2
+
+
+# https://docs.pytest.org/en/6.2.x/fixture.html
