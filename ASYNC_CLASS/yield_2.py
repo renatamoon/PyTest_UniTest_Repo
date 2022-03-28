@@ -26,7 +26,50 @@ map(lambda x: x, [1,2,3])
 
 m = map(lambda x: x, [1,2,3])
 
-print("this is the generator: ", next(m))
-print("this is the generator: ", next(m))
-print("this is the generator: ", next(m))
-print("this is the generator: ", next(m))
+print("this is the generator: ", next(m)) # 1
+print("this is the generator: ", next(m)) # 2
+print("this is the generator: ", next(m)) # 3
+# print("this is the generator: ", next(m)) # StopIteration -  because the generator goes until 3
+
+
+# ------------- subgeradores
+
+print("=-"*20)
+
+def odd(r):
+    yield from (n for n in range(r) if n % 2 == 1)
+
+
+def subchapters():
+    yield 1.1
+    yield 1.2
+    yield 1.3
+
+def chapters():
+    yield 1
+    yield from subchapters()
+    yield 2
+
+
+c = chapters()
+
+print(next(c))
+print(next(c))
+print(next(c))
+print(next(c))
+print(next(c))
+
+
+print("=-"*20)
+print("YIELD FROM")
+
+
+# how to iterate with generators under a function
+def my_generator():
+    yield from [1,2,3,4,5]
+
+
+def without_from():
+    for value in [1,2,3,4,5]:
+        yield value
+
