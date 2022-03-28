@@ -81,3 +81,35 @@ print("=-"*20)
 
 for value in generator_4:
     print("The value is: ", value)
+
+
+print("=-"*20)
+
+# odd = odd
+def odd():
+    value = 1
+
+    while True:
+        yield value
+        value += 2
+
+result = odd()
+
+print("the odd value is: ", next(result))
+print("the next odd value is: ", next(result))
+
+# we're producing the values when the function is called.
+
+print("=-"*20)
+
+with open("potato.txt", 'w') as file:
+    file.write("""
+    I gotta tell you what I'm feeling inside
+    I could lie to myself, but it's true
+    There's no denying when I look in your eyes
+    Girl I'm out of my head over you
+    And I lived so long believing all love is blind
+    But everything about you is telling me this time
+    """)
+
+tab = open("potato.txt")
