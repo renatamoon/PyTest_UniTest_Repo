@@ -1,5 +1,13 @@
 from totorial_fixture.mydb import MyDB
 
+"""
+This is how a normal test is. You connect with the database everytime you have to use the code.
+The issue on these test are cuz they have: code repetition, creating expensive DB connection in every test case
+Two ways to fix those issues:
+1) setup and teardown methods (classic xunit style)
+2) fixtures (recommended)
+"""
+
 
 def test_johns_id():
     db = MyDB()
@@ -17,11 +25,3 @@ def test_toms_id():
     query = "select id from employee_db where name=Tom"
     id_query = cur.execute(query=query)
     assert id_query == 789
-
-
-"""
-The issue on these test are cuz they have: code repetition, creating expensive DB connection in every test case
-Two ways to fix those issues:
-1) setup and teardown methods (classic xunit style)
-2) fixtures (recommended)
-"""
