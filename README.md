@@ -21,3 +21,10 @@
 ### HOW TO INSTALL BY THE COMMAND LINE?
 
 - `pip install pytest`
+
+### WHAT ARE ASSERTIONS?
+
+- Assertions help programmers verify the output of a particular function or part of software;
+- We write assertions to test our assumptions around a particular piece of coude.
+- When the assertion is executed it is assumed to be true, if the assumption is not correct then the tests fails;
+- we cannot validate the output with an if else statement
