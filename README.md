@@ -28,3 +28,20 @@
 - We write assertions to test our assumptions around a particular piece of coude.
 - When the assertion is executed it is assumed to be true, if the assumption is not correct then the tests fails;
 - we cannot validate the output with an if else statement
+
+### SYNTAX OF ASSERTIONS
+
+- assert <condition>, <message>
+
+### TYPES OF ASSERTIONS
+
+```def test_add_string():
+    output = add("I love", " Python")
+    print(output)
+
+    assert type(output) is str
+    assert "love" in output
+    assert isinstance(output, str)
+    assert 'I love Python' == output```
+    
+    
