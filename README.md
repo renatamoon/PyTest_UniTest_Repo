@@ -35,23 +35,47 @@
 
 ### TYPES OF ASSERTIONS
 
-```def test_add_string():
+```
+def test_add_string():
     output = add("I love", " Python")
     print(output)
 
     assert type(output) is str
     assert "love" in output
     assert isinstance(output, str)
-    assert 'I love Python' == output```
+    assert 'I love Python' == output
+```
 
 ### DEALING WITH EXEPTIONS
 
-```def test_exception_example():
+```
+def test_exception_example():
     with pytest.raises(ZeroDivisionError, match=r".* by1 .*") as exceptinfo:
         print(100 / 0)
     print(type(exceptinfo))
     print(exceptinfo.type)
     print(exceptinfo.value)
-    print(exceptinfo.traceback)```
+    print(exceptinfo.traceback)
+```
+
+### USING MARKERS - XFAIL, XPASS AND XSKIP
     
-   
+- There will be scenarios that you wanna to scape of an error and also say that your peace of code must not pass.
+- xfail - if the test is marked as xfail - then the test is executed but not considered in final result of execution.
+- @pytest.mark.xfail
+- Is helpful if you are expecting a test case to fail already
+- REASON: You can also input a reason to be printed, this test will be executed but it will be passed:
+    
+```
+@pytest.mark.xfail(reason="SHOULD BE SKIPPED")
+def test_add():
+    assert add(10, 20) == 30
+```
+
+- Another example is to use sys.version_info as a parameter and then use a reason that your test can fail:
+    
+```
+@pytest.mark.xfail(sys.version_info > (3, 7), reason="Python module version not compatible")
+def test_divide():
+    assert divide(20, 10) == 2   
+```
