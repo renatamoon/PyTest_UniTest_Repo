@@ -43,5 +43,15 @@
     assert "love" in output
     assert isinstance(output, str)
     assert 'I love Python' == output```
+
+### DEALING WITH EXEPTIONS
+
+```def test_exception_example():
+    with pytest.raises(ZeroDivisionError, match=r".* by1 .*") as exceptinfo:
+        print(100 / 0)
+    print(type(exceptinfo))
+    print(exceptinfo.type)
+    print(exceptinfo.value)
+    print(exceptinfo.traceback)```
     
-    
+   
