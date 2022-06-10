@@ -94,3 +94,18 @@ def test_add_parametrize(output, a, b):
     assert add(a, b) == output
     
 ```
+
+### USING MOCK ON UNIT TESTS:
+    
+- Should not depend on any type of lib, database, server or service. What is a dependence? IS something your
+code is using as a dependency.
+- When you're testing your service, you need to get rid of all the dependencies. Then, when you need to use the
+dependencies you should call the Mock of your database, email service or location API.
+    
+
+#### BENEFITS OF MOCKING:
+    
+- Cut down the external dependencies;
+- run test in isolation;
+- Save time while executing tests
+- Gives you more control on simulating the behavior of external dependencies/libraries
