@@ -3,10 +3,8 @@
 - xfail - if the test is marked as xfail - then the test is executed but not considered in final result of execution.
 @pytest.mark.xfail
 Is helpful if you are expecting a test case to fail already
-- skip -
 """
 import sys
-
 import pytest
 from .app import add, multiply, divide
 
