@@ -6,7 +6,7 @@ SKIP MARKER: WHAT IS A SKIP MARKER?
 """
 import sys
 import pytest
-from .app import add, multiply, divide
+from ..app import add, divide
 
 
 @pytest.mark.skip  # normal skipping
