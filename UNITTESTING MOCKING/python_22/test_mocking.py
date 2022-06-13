@@ -1,4 +1,6 @@
 from unittest import mock
+from service import is_available
+
 """
 USING MOCK:
 - Should not depend on any type of lib, database, server or service. What is a dependence? IS something your
@@ -21,6 +23,19 @@ first_mock_value = mock.Mock(name="First Mock", return_value=False)
 first_mock_value()
 
 
-@mock.patch("service.check_availability")
+@mock.patch("python_22.service.check_availability")
 def test_first_mock(mock_check_availability):
     first_mock.return_value = False
+    print(is_available())
+    first_mock.assert_called()  # when the mock was called at least one time
+    first_mock.assert_called_once()  # when the mock was called exactly once
+
+
+"""
+There are other VERIFYING MOCKS
+- assert called - when the mock was called at least one time
+- assert called with - when the mock was called exactly once
+- assert not called - when the mock wasn't called at all
+- assert called with - when the mock was called with arguments or parameters
+- assert called once with - when the mock was called exactly once with arguments/parameters
+"""
