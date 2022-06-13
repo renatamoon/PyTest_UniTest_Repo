@@ -20,3 +20,7 @@ first_mock()
 first_mock_value = mock.Mock(name="First Mock", return_value=False)
 first_mock_value()
 
+
+@mock.patch("service.check_availability")
+def test_first_mock(mock_check_availability):
+    first_mock.return_value = False
