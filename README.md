@@ -109,3 +109,12 @@ dependencies you should call the Mock of your database, email service or locatio
 - run test in isolation;
 - Save time while executing tests
 - Gives you more control on simulating the behavior of external dependencies/libraries
+    
+### VERIFYING MOCKS (BEHAVIOR VERIFICATIONS OF MOCKS):
+    
+There are other VERIFYING MOCKS
+- assert called - when the mock was called at least one time
+- assert called with - when the mock was called exactly once
+- assert not called - when the mock wasn't called at all
+- assert called with - when the mock was called with arguments or parameters
+- assert called once with - when the mock was called exactly once with arguments/parameters
